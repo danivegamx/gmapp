@@ -1,5 +1,6 @@
 # GMaps locator SPA
-## Built in React.js ## By Daniel Vega
+## Built in React.js
+####By Daniel Vega
 ======
 
 ## Instructions for development and code changes:
@@ -9,7 +10,6 @@
 ```
 npm install
 npm run watch
-
 ```
 
 ## Instructions for build production app:
@@ -19,7 +19,6 @@ npm run watch
 ```
 npm run build
 npm start
-
 ```
 
 ## Testing app:
@@ -28,7 +27,6 @@ npm start
 
 ```
 npm run test
-
 ```
 
 ## Dependencies
