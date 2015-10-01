@@ -1,0 +1,20 @@
+{
+  "name": "gmap-react-spa",
+  "author": "Daniel Vega",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "A responsive Single Page APP with GMaps locator service built in React.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "NODE_ENV=development watchify -v -d -t [ reactify --es6 ] js/src/index.js -o js/build/compiled.js",
+    "build": "NODE_ENV=production browserify -t [ reactify --es6 ] js/src/index.js | uglifyjs > js/build/compiled.js"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "reactify": "^1.1.0",
+    "uglify-js": "^2.4.20",
+    "watchify": "^3.1.2",
+    "google-map-react": "^0.4.0"
+  }
+}
