@@ -6,6 +6,7 @@ var Search = require('./Search');
 var Map = require('./Map');
 var CurrentLocation = require('./CurrentLocation');
 var LocationList = require('./LocationList');
+var Footer = require('./Footer');
 
 /* Main Component */
 var App = React.createClass({
@@ -18,7 +19,7 @@ var App = React.createClass({
 	*/
 	addToFavorites(address) {
 		var favorites = this.state.favorites; // Get favorite list from state.
-		
+
 		favorites.push({ // Add address and timestamp to favorites array.
 			address: address,
 			timestamp: Date.now()
@@ -35,7 +36,7 @@ var App = React.createClass({
 	*	TODO React-required;
 	*	Method to set the initial state for the app.
 	*/
-	getInitialState() { 
+	getInitialState() {
 		var favorites = []; // Initialize favorites with an empty array.
 
 		if(localStorage.favorites) {  // If favorites exists, asign array to previous var.
@@ -66,7 +67,7 @@ var App = React.createClass({
 		for(var i = 0; i < favorites.length; i++)
 			if(favorites[i].address == address)
 				return true;
-					
+
 		return false;
 	},
 
@@ -127,6 +128,7 @@ var App = React.createClass({
 						</div>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		);
 	},
