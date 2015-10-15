@@ -12,7 +12,6 @@ A responsive New Web's ReactJS prototype built on Flux architecture. This effort
 ```
 npm install
 npm run watch
-
 ```
 
 ## Instructions for build production app:
@@ -22,7 +21,6 @@ npm run watch
 ```
 npm run build
 npm start
-
 ```
 
 ## Testing app:
@@ -31,7 +29,6 @@ npm start
 
 ```
 npm run test
-
 ```
 
 ## Dependencies
