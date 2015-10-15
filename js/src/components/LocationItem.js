@@ -1,4 +1,5 @@
-var React = require('react');
+var React = require('react'),
+	moment = require('moment');
 
 var LocationItem = React.createClass({
 
@@ -12,7 +13,6 @@ var LocationItem = React.createClass({
 	/*
 	*	TODO React-required;
 	*	Method to render the component.
-	*
 	*	@return jsxViewController
 	*/
 	render(){

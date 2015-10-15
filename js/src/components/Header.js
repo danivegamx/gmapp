@@ -10,9 +10,10 @@ var Header = React.createClass({
 	*/
 	render() {
 		return (
-			<header>
+			<header className="header">
 				<span className="appTitle">
-					<strong>GMapp</strong> service built in React.js </span>
+					<strong>New Web's Prototype</strong> built in React.js
+				</span>
 			</header>
 		);
 	}

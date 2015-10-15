@@ -1,11 +1,11 @@
-var React = require('react');
+var React = require('react'),
+	GMaps = require('gmaps');
 
 var Map = React.createClass({
 
 	/*
 	*	TODO React-required;
 	*	Method to handle render.
-	*
 	*/
 	componentDidMount() {
 		this.componentDidUpdate();
@@ -14,9 +14,9 @@ var Map = React.createClass({
 	/*
 	*	TODO React-required;
 	*	Method to handle render update.
-	*
 	*/
 	componentDidUpdate() {
+		
 		if(this.lastLat == this.props.lat && this.LastLng == this.props.lng)
 			return;
 

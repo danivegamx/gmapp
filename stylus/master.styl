@@ -1,0 +1,112 @@
+@import "nib"
+@import "colors.styl"
+@import "icomoonfontface.styl"
+
+$radius = 6px
+
+body
+	background $gray
+	font-family 'Roboto', sans-serif
+	font-size 16px
+	margin 0
+	padding 0
+#map
+	box-shadow -1px 1px 2px rgba(0,0,0,.3)
+	height 400px
+	margin 0 3px 15px 3px
+.active-location
+	font-weight bold
+.createdAt
+	color gray
+	font-size .7rem
+	font-style italic
+.current-content
+	height 51px
+	line-height 20px
+	padding 10px
+	text-align center
+.location-favorite-title,
+.current-title
+	background $lightblue
+	color white
+	padding 10px
+.current-wrapper
+.location-favorite-wrapper
+	background white
+	border-radius $radius
+	box-shadow -1px 1px 2px rgba(0,0,0,.3)
+	overflow hidden
+.current-wrapper
+	height 100px
+.current-wrapper span
+	margin 0
+	margin-right 5px
+.favorite-wrapper,
+.map-wrapper
+	display inline-block
+	vertical-align top
+.footer
+	background $blue
+	color white
+	border-radius 5px
+	position fixed
+	bottom 10px
+	right 10px
+	padding 10px
+.form
+	background white
+	border-radius 5px
+	box-shadow -1px 1px 2px rgba(0,0,0,.3)
+	margin-bottom 20px
+	padding-left 5px
+	position relative
+	&:before
+		color #aaa
+		content "\e603"
+		font-family "icomoon"
+		font-size .9rem
+		left 7px
+		position absolute
+		top 10px
+	& input
+		padding-left 20px
+.formbefore
+	color gray
+.header
+	background $blue
+	color white
+	font-size 1rem
+	padding 10px
+.icon-star-empty
+.icon-star-full
+	&:hover
+		cursor pointer
+.input
+	background transparent
+	border 0px solid transparent
+	font-size 1.2rem
+	font-style italic
+	outline none
+	padding 10px
+	width 95%
+.list-group-item
+	border-bottom 1px solid rgba(0,0,0,.1)
+	display block
+	padding 10px
+.location-favorite-items
+	height 315px
+	overflow auto
+.location-favorite-wrapper
+	height 360px
+	margin-bottom 15px
+	margin-top 15px
+.row .row
+	margin 0
+.title
+	font-size 1.2rem
+	padding 20px 0
+	text-align center
+.toggle-favorite-button
+	color #f1c40f
+.toggle-favorite-buttonhover
+	cursor pointer

@@ -1,109 +1,57 @@
-/* Imports */
-var React = require('react');
-var Header = require('./Header');
-var Title = require('./Title');
-var Search = require('./Search');
-var Map = require('./Map');
-var CurrentLocation = require('./CurrentLocation');
-var LocationList = require('./LocationList');
-var Footer = require('./Footer');
+
+var React = require('react'),
+	Header = require('./Header'),
+	Title = require('./Title'),
+	Search = require('./Search'),
+	Map = require('./Map'),
+	CurrentLocation = require('./CurrentLocation'),
+	LocationList = require('./LocationList'),
+	Footer = require('./Footer'),
+	FavoritesStore = require('../stores/FavoritesStore'),
+	MapStore = require('../stores/MapStore'),
+	AppActions = require('../actions/AppActions');
+
+
+function getMapState() {
+	return {
+		favorites: FavoritesStore.getFavorites(),
+		currentLocation: MapStore.getAddress(),
+		mapCoordinates: MapStore.getMapCoordinates()
+	}
+}
 
 /* Main Component */
 var App = React.createClass({
 
 	/*
-	*	TODO Add current location to favorites;
-	*	Method to remove an address from favorites list.
-	*
+	*	TODO Check if current addres is on favorites;
+	*	Method to check if the current address is already
+	*	on the favorites list.
 	*	@param address
+	*	@return boolean
 	*/
-	addToFavorites(address) {
-		var favorites = this.state.favorites; // Get favorite list from state.
-
-		favorites.push({ // Add address and timestamp to favorites array.
-			address: address,
-			timestamp: Date.now()
-		});
-
-		this.setState({ // Dirty state. Regenerate new state with updated favorites list.
-			favorites: favorites
-		});
-
-		localStorage.favorites = JSON.stringify(favorites); // Put list on local storage.
+	isAddressInFavorites(address) {
+		FavoritesStore.checkifFavorites(address)
+		return FavoritesStore.getIfItsOnFavorites();
 	},
-
+	componentDidMount(){
+		this.componentDidUpdate();
+	},
+	componentDidUpdate() {
+		FavoritesStore.addChangeListener(this._onChange);
+		MapStore.addChangeListener(this._onChange);
+	},
 	/*
 	*	TODO React-required;
 	*	Method to set the initial state for the app.
 	*/
 	getInitialState() {
-		var favorites = []; // Initialize favorites with an empty array.
-
-		if(localStorage.favorites) {  // If favorites exists, asign array to previous var.
-			favorites = JSON.parse(localStorage.favorites)
-		}
-
-		return { // Default: Paris' coordinates.
-			favorites: favorites,
-			currentLocation: "Paris, France",
-			mapCoordinates: {
-				lat: 48.856614,
-				lng: 2.3522219
-			}
-		};
-	},
-
-	/*
-	*	TODO Check if current addres is on favorites;
-	*	Method to check if the current address is already
-	*	on the favorites list.
-	*
-	*	@param address
-	*	@return boolean
-	*/
-	isAddressInFavorites(address) {
-		var favorites = this.state.favorites;
-
-		for(var i = 0; i < favorites.length; i++)
-			if(favorites[i].address == address)
-				return true;
-
-		return false;
-	},
-
-	/*
-	*	TODO Remove current location to favorites;
-	*	Method to remove an address from favorites list.
-	*
-	*	@param address
-	*/
-	removeFromFavorites(address) {
-		var favorites = this.state.favorites; // Get favorites list from state.
-		var index = -1;
-
-		// Look for the addres in favorites.
-		for (var i = 0; i < favorites.length; i++)
-			if(favorites[i].address == address) {
-				index = i;
-				break;
-			}
-
-		// If found, remove it.
-		if(index !== -1) {
-			favorites.splice(index, 1);
-
-			this.setState({ // Update status.
-				favorites: favorites
-			});
-
-			localStorage.favorites = JSON.stringify(favorites); // Save favorites list.
-		}
+		return getMapState();
 	},
 
 	/*
 	*	TODO React-required;
 	*	Method to render all the components.
-	*
 	*	@return jsxViewController
 	*/
 	render() {
@@ -137,41 +85,21 @@ var App = React.createClass({
 	*	TODO Search a location from an address;
 	*	Method to call the GMap service to search the
 	*	coordinates from a given address.
-	*
 	*	@param address
 	*/
 	searchForAddress(address) {
-		var self = this;
-
-		// GMaps geocode:
-		GMaps.geocode({
-			address: address,
-			callback: function(results, status) {
-				if(status !== 'OK') return;
-				var latlng = results[0].geometry.location;
-
-				self.setState({
-					currentLocation: results[0].formatted_address,
-					mapCoordinates: {
-						lat: latlng.lat(),
-						lng: latlng.lng()
-					}
-				});
-			}
-		});
+		AppActions.searchAddress(address);
 	},
 
-	/*
-	*	TODO Toggle address in favorites list;
-	*	Method to toggle a specific address into favorites list.
-	*
-	*	@param address
-	*/
 	toggleFavorite(address) {
-		if(this.isAddressInFavorites(address)) // If address is on favorites, remove it.
-			this.removeFromFavorites(address);
+		FavoritesStore.checkifFavorites(address)
+		if(FavoritesStore.getIfItsOnFavorites()) // If address is on favorites, remove it.
+			AppActions.removeFromFavorites(address)
 		else // If address is NOT on favorites, add it.
-			this.addToFavorites(address);
+			AppActions.addToFavorites(address)
+	},
+	_onChange(){
+		this.setState(getMapState());
 	}
 });
 

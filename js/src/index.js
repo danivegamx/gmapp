@@ -1,4 +1,5 @@
-var React = require('react');
-var App = require('./components/App');
+var React = require('react'),
+	ReactDOM = require('react-dom'),
+	App = require('./components/App');
 
-React.render(<App />, document.getElementById('gmapp'));
+ReactDOM.render(<App />,document.getElementById('gmapp'));

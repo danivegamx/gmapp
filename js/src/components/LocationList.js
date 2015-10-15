@@ -1,21 +1,20 @@
-var React = require('react');
-var LocationItem = require('./LocationItem');
+var React = require('react'),
+	LocationItem = require('./LocationItem');
 
 var LocationList = React.createClass({
 
 	/*
 	*	TODO React-required;
 	*	Method to render the component.
-	*
 	*	@return jsxViewController
 	*/
 	render() {
 		var self = this;
-
+		var index = 0;
 		var locations = this.props.locations.map(function(l){
 			var active = self.props.activeLocationAddress == l.address;
 
-			return <LocationItem address={l.address} timestamp={l.timestamp} active={active} onClick={self.props.onClick} />
+			return <LocationItem key={index++} address={l.address} timestamp={l.timestamp} active={active} onClick={self.props.onClick} />
 		});
 
 		if(!locations.length)
