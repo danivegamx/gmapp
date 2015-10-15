@@ -2,7 +2,6 @@
 ## Built in React.js + Flux Architecture
 **By Daniel Vega** *@danivegamx <ingdanivega@gmail.com>*
 Nearshore Frontend Tech Lead
-======
 
 A responsive New Web's ReactJS prototype built on Flux architecture. This effort is focused on apply all the good practices and techniques to build scalable applications using "New Web's" tools, such as ReactJS, NodeJS, NPM and NPM packages. For more open source examples and initiatives, visit my [Github profile](https://www.github.com/danivegamx/).
 
@@ -73,7 +72,7 @@ Module to set timestamps into *x seconds/minutes/hours ago* format.
 
 ## Additional info:
 
-1. You can see diagrams and visual helps on the *images* folder. 
+1. You can see diagrams and visual helps on the *images* folder.
 
 2. In order to create a dynamic call to an API REST, you can add jQuery as a dev dependency to use the bundle **$.ajax({})** tool on the actions, or use **Node-jsx** to render server-side view-controllers.
 
