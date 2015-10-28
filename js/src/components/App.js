@@ -35,11 +35,12 @@ var App = React.createClass({
 		return FavoritesStore.getIfItsOnFavorites();
 	},
 	componentDidMount(){
-		this.componentDidUpdate();
-	},
-	componentDidUpdate() {
 		FavoritesStore.addChangeListener(this._onChange);
 		MapStore.addChangeListener(this._onChange);
+	},
+	componentWillUnmount() {
+		FavoritesStore.removeChangeListener(this._onChange);
+		MapStore.removeChangeListener(this._onChange);
 	},
 	/*
 	*	TODO React-required;
