@@ -1,4 +1,4 @@
-var keyMirror = require('keyMirror');
+var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
 	SEARCH_ADDRESS: null,				// Search a specific address.

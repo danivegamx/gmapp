@@ -12,7 +12,7 @@ var Header = React.createClass({
 		return (
 			<header className="header">
 				<span className="appTitle">
-					<strong>New Web's Prototype</strong> built in React.js
+					<strong>React.js Prototype</strong> built in React.js
 				</span>
 			</header>
 		);

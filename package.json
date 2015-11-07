@@ -20,6 +20,7 @@
   "devDependencies": {
     "browserify": "^9.0.8",
     "gmaps": "^0.4.21",
+    "keymirror": "^0.1.1",
     "moment": "^2.10.6",
     "nib": "^1.1.0",
     "react-dom": "^0.14.0",
