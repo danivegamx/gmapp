@@ -2,8 +2,6 @@
 ## Built in React.js + Flux Architecture
 **By Daniel Vega** *@danivegamx <ingdanivega@gmail.com>*
 
-Nearshore Frontend Technical Leader @ Tata Consultancy Services
-
 A responsive New Web's ReactJS prototype built on Flux architecture. This effort is focused on apply all the good practices and techniques to build scalable applications using "New Web's" tools, such as ReactJS, NodeJS, NPM and NPM packages. For more open source examples and initiatives, visit my [Github profile](https://www.github.com/danivegamx/).
 
 ## Instructions for development and code changes:
