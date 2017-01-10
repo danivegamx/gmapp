@@ -1,7 +1,7 @@
-var React = require('react'),
-	GMaps = require('gmaps');
+import React from 'react';
+import GMaps from 'gmaps';
 
-var Map = React.createClass({
+export default class Map extends React.Component {
 
 	/*
 	*	TODO React-required;
@@ -9,14 +9,14 @@ var Map = React.createClass({
 	*/
 	componentDidMount() {
 		this.componentDidUpdate();
-	},
+	}
 
 	/*
 	*	TODO React-required;
 	*	Method to handle render update.
 	*/
 	componentDidUpdate() {
-		
+		//debugger
 		if(this.lastLat == this.props.lat && this.LastLng == this.props.lng)
 			return;
 
@@ -33,7 +33,7 @@ var Map = React.createClass({
 			lat: this.props.lat,
 			lng: this.props.lng
 		});
-	},
+	}
 
 	/*
 	*	TODO React-required;
@@ -44,6 +44,4 @@ var Map = React.createClass({
 	render() {
 		return (<div id="map"></div>);
 	}
-});
-
-module.exports = Map;
+}

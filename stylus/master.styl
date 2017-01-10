@@ -4,79 +4,109 @@
 
 $radius = 6px
 
+*
+	transition .3s all ease
+
 body
-	background $gray
-	font-family 'Roboto', sans-serif
+	background $midnight
+	font-family 'Quicksand', sans-serif
 	font-size 16px
 	margin 0
 	padding 0
+main.row
+	background $asphalt
+	border-radius 5px
+	box-shadow 0 0 25px 0px rgba(0,0,0,.6)
+	margin 0 50px 50px 50px
+	overflow hidden
+	width initial
 #map
-	box-shadow -1px 1px 2px rgba(0,0,0,.3)
-	height 400px
-	margin 0 3px 15px 3px
+	height 600px
+	margin 0
 .active-location
+	background rgba(255,255,255,.05)
 	font-weight bold
+	& .createdAt
+		font-weight 300
 .createdAt
-	color gray
-	font-size .7rem
+	color $wh50
+	font-size .6rem
 	font-style italic
 .current-content
-	height 51px
-	line-height 20px
-	padding 10px
-	text-align center
+	color $gray
+	padding 20px
 .location-favorite-title,
 .current-title
-	background $lightblue
+	background $midnight
+	border-radius 0 5px 0 0
+	border-bottom 1px solid rgba(0,0,0,.2)
 	color white
-	padding 10px
+	padding 20px
+	text-transform uppercase
+.current-wrapper
+	border-radius 0 5px 0 0
 .current-wrapper
 .location-favorite-wrapper
-	background white
-	border-radius $radius
-	box-shadow -1px 1px 2px rgba(0,0,0,.3)
+	background $asphalt
+	font-weight 300
 	overflow hidden
-.current-wrapper
-	height 100px
 .current-wrapper span
 	margin 0
 	margin-right 5px
-.favorite-wrapper,
-.map-wrapper
+.favorite-wrapper
+	padding 0
+.foot-note
 	display inline-block
-	vertical-align top
+	margin-top 12px
+	margin-right 10px
+	position relative
 .footer
-	background $blue
-	color white
-	border-radius 5px
+	background $gray
+	border-radius 25px
+	color black
+	font-weight 300
+	font-size .9rem
 	position fixed
 	bottom 10px
 	right 10px
-	padding 10px
+	& figure
+		border-radius 50%
+		display inline-block
+		float left
+		margin 0
+		overflow hidden
+		padding 0
+		& img
+			width 45px
 .form
 	background white
-	border-radius 5px
-	box-shadow -1px 1px 2px rgba(0,0,0,.3)
-	margin-bottom 20px
-	padding-left 5px
+	padding-left 25px
 	position relative
 	&:before
 		color #aaa
 		content "\e603"
 		font-family "icomoon"
 		font-size .9rem
-		left 7px
+		left 20px
 		position absolute
-		top 10px
+		top 22px
 	& input
+		border-radius 10px 0 0 0
+		padding 20px 0
 		padding-left 20px
 .formbefore
 	color gray
 .header
-	background $blue
 	color white
-	font-size 1rem
-	padding 10px
+	font-size 1.5rem
+	font-weight 300
+	padding 60px 20px 20px 20px
+	& figure
+		display inline-block
+		margin 0 15px 0 30px
+		padding 0
+		& img
+			width 30px
 .icon-star-empty
 .icon-star-full
 	&:hover
@@ -92,21 +122,29 @@ body
 .list-group-item
 	border-bottom 1px solid rgba(0,0,0,.1)
 	display block
-	padding 10px
+	padding 20px
+	font-size .8rem
+	text-transform uppercase
+	&:hover
+		background rgba(255,255,255,.1)
 .location-favorite-items
-	height 315px
+	color $gray
 	overflow auto
-.location-favorite-wrapper
-	height 360px
-	margin-bottom 15px
-	margin-top 15px
+.map-wrapper
+	display block
+	padding 0
+	vertical-align top
 .row .row
 	margin 0
 .title
+	color white
 	font-size 1.2rem
 	padding 20px 0
+	position absolute
 	text-align center
 .toggle-favorite-button
 	color #f1c40f
-.toggle-favorite-buttonhover
-	cursor pointer
+	float right
+.toggle-favorite-button
+	& hover
+		cursor pointer

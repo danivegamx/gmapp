@@ -5,6 +5,7 @@ var AppDispatcher = new Dispatcher();
 
 // Handle Actions:
 AppDispatcher.handleAction = function(action) {
+	//debugger
 	this.dispatch({
 		source: 'SEARCH_ACTION',
 		action: action

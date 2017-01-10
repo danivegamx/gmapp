@@ -1,21 +1,21 @@
-var React = require('react'),
-	moment = require('moment');
+import React from 'react';
+import moment from 'moment';
 
-var LocationItem = React.createClass({
+export default class LocationItem extends React.Component {
 
 	/*
 	*	Method to handle the address on the properties from the app.
 	*/
-	handleClick(){
+	handleClick() {
 		this.props.onClick(this.props.address);
-	},
+	}
 
 	/*
 	*	TODO React-required;
 	*	Method to render the component.
 	*	@return jsxViewController
 	*/
-	render(){
+	render() {
 		var cn = "list-group-item";
 
 		if(this.props.active) {
@@ -25,10 +25,8 @@ var LocationItem = React.createClass({
 		return (
 			<a className={cn} onClick={this.handleClick}>
 				{this.props.address}
-				<div className="createdAt">{ moment(this.props.timestamp).fromNow() }</div>			
+				<div className="createdAt">{ moment(this.props.timestamp).fromNow() }</div>
 			</a>
 		)
 	}
-});
-
-module.exports = LocationItem;
+}

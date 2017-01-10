@@ -5,28 +5,30 @@
   "version": "1.1.0",
   "description": "A responsive New Web's ReactJS prototype built on Flux architecture",
   "private": true,
-  "main": "js/src/index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "stylus": "stylus -u nib -c -w -o css/master.css stylus/master.styl",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify -v -d -t [ reactify --es6 ] js/src/index.js -o js/build/compiled.js",
-    "build": "browserify -t [ reactify --es6 ] js/src/index.js | uglifyjs > js/build/compiled.js"
+    "start": "webpack-dev-server --hot --progress --colors --inline",
+    "build": "webpack -p"
   },
   "dependencies": {
-    "flux": "^2.1.1",
-    "react": "^0.14.0",
-    "underscore": "^1.8.3"
+    "flux": "^3.1.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "underscore": "^1.8.3",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "devDependencies": {
-    "browserify": "^9.0.8",
-    "gmaps": "^0.4.21",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "gmaps": "^0.4.24",
     "keymirror": "^0.1.1",
-    "moment": "^2.10.6",
-    "nib": "^1.1.0",
-    "react-dom": "^0.14.0",
-    "reactify": "^1.1.0",
-    "stylus": "^0.52.4",
-    "uglify-js": "^2.4.20",
-    "watchify": "^3.1.2"
+    "moment": "^2.17.1",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5"
   }
 }

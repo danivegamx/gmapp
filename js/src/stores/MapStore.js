@@ -12,6 +12,7 @@ function searchAddress(address) {
     GMaps.geocode({
       address: address,
       callback: function(results, status) {
+        //debugger
         if(status !== 'OK') return;
         var latlng = results[0].geometry.location;
 
@@ -33,6 +34,7 @@ var MapStore = _.extend({}, EventEmitter.prototype, {
   },
   // Emit Change event
   emitChange: function() {
+    //debugger
     this.emit('change');
   },
   // Add change listener

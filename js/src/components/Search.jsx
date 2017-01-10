@@ -1,15 +1,18 @@
-var React = require('react'),
-	AppActions = require('../actions/AppActions');
+import React from 'react';
+import AppActions from '../actions/AppActions.js';
 
-var Search = React.createClass({
+export default class Search extends React.Component {
 
 	/*
-	*	TODO React-required;
-	*	Method to set the initial state for the component.
+	*	React-required;
+	*	Constructor Method to set the initial state for the component.
 	*/
-	getInitialState() {
-		return {value: ''};
-	},
+	constructor(props) {
+		super(props);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.state = {value: ''};
+	}
 
 	/*
 	*	TODO Set state to the new location;
@@ -18,22 +21,22 @@ var Search = React.createClass({
 	*	@param event
 	*/
 	handleChange(event) {
+		//debugger
 		AppActions.searchAddress(event.target.value);
-	},
+	}
 
 	/*
-	*	TODO Handle FORM tag with an event;
+	*	Handle FORM tag with an event;
 	*	Method to handle the form, get the addres from the input and
 	*	delegate the text to the GMap service.
 	*	@param event
 	*/
 	handleSubmit(event) {
+		//debugger
 		event.preventDefault();
-
 		this.props.onSearch(this.state.value);
-
-		this.getDOMNode().querySelector('input').blur();
-	},
+		//document.querySelector('#adress').blur();
+	}
 
 	/*
 	*	TODO React-required;
@@ -47,6 +50,4 @@ var Search = React.createClass({
 			</form>
 		);
 	}
-});
-
-module.exports = Search;
+}

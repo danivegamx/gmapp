@@ -1,7 +1,7 @@
-var React = require('react'),
-	LocationItem = require('./LocationItem');
+import React from 'react';
+import LocationItem from './LocationItem.jsx';
 
-var LocationList = React.createClass({
+export default class LocationList extends React.Component {
 
 	/*
 	*	TODO React-required;
@@ -29,6 +29,4 @@ var LocationList = React.createClass({
 			</div>
 		);
 	}
-});
-
-module.exports = LocationList;
+}

@@ -4,6 +4,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher'),
 // Define actions object.
 var AppActions = {
 	searchAddress: function(address) {
+		//debugger
 		AppDispatcher.handleAction({
 			actionType: AppConstants.SEARCH_ADDRESS,
 			address: address
