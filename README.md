@@ -1,16 +1,17 @@
 # New Web Prototype
-## Built in React.js + Flux Architecture
+## Built in React.js (ES6) + Flux Architecture
 **By Daniel Vega** *@danivegamx <ingdanivega@gmail.com>*
+Senior Software Engineer & Front-End Competency Lead
 
-A responsive New Web's ReactJS prototype built on Flux architecture. This effort is focused on apply all the good practices and techniques to build scalable applications using "New Web's" tools, such as ReactJS, NodeJS, NPM and NPM packages. For more open source examples and initiatives, visit my [Github profile](https://www.github.com/danivegamx/).
+A responsive ReactJS app built on ES6 and Flux architecture. This effort is focused on apply all the good practices and techniques to build scalable applications using cutting-edge technologies tools, such as ReactJS, Flux and NodeJS. For more open source examples and initiatives, visit my [Github profile](https://www.github.com/danivegamx/).
 
 ## Instructions for development and code changes:
 
-*All changes will be auto-compiled to the final compiled.js file.*
+*All changes will be auto-compiled to the final bundle.js file.*
 
 ```
 npm install
-npm run watch
+npm run start
 ```
 
 ## Instructions for build production app:
@@ -39,22 +40,6 @@ The UI library and it's utilities.
 
 Isolated module to handle *render* methods.
 
-### reactify
-
-A jsx transformer with ES6 support to compile executable JS code.
-
-### browserify
-
-Toolkit to split React's components in different files as **modules**.
-
-### watchify
-
-Tool for 'watch' or 'listen' all the changes on the pre-compilation phase.
-
-### uglify-js
-
-Tool to minify all the code and to take it to production-grade mode.
-
 ### stylus & nib
 
 CSS pre-processing engine and mixin set to handle styles across browsers, solving compatibility issues.
@@ -67,11 +52,9 @@ Module to set timestamps into *x seconds/minutes/hours ago* format.
 
 ## Additional info:
 
-1. You can see diagrams and visual helps on the *images* folder.
+1. In order to create a dynamic call to an API REST, you can add AJAX or HttpRequest on the stores.
 
-2. In order to create a dynamic call to an API REST, you can add jQuery as a dev dependency to use the bundle **$.ajax({})** tool on the stores, or XMLHttpRequest method.
-
-3. App architecture:
+2. App architecture:
 
 ```
 /
@@ -83,20 +66,20 @@ Module to set timestamps into *x seconds/minutes/hours ago* format.
 	 ---- Components Distribution.png
 ---- js
  	 ---- build/
- 		  ---- compiled.js
+ 		  ---- bundle.js
  	 ---- src/
  		  ---- index.js
  		  ---- actions/
  		  	   ---- AppActions.js
  		  ---- components/
-			   ---- App.js
-			   ---- CurrentLocation.js
-			   ---- Footer.js
-			   ---- Header.js
-			   ---- LocationItem.js
-			   ---- LocationList.js
-			   ---- Map.js
-			   ---- Title.js
+			   ---- App.jsx
+			   ---- CurrentLocation.jsx
+			   ---- Footer.jsx
+			   ---- Header.jsx
+			   ---- LocationItem.jsx
+			   ---- LocationList.jsx
+			   ---- Map.jsx
+			   ---- Title.jsx
 		  ---- dispatcher/
 		  	   ---- AppDispatcher.js
 		  ---- stores/
@@ -106,6 +89,7 @@ Module to set timestamps into *x seconds/minutes/hours ago* format.
  		  ---- moment.min.js
 ---- index.html
 ---- package.json
+---- webpack.config.js
 ---- README.md
 ---- TODO.md
 
@@ -132,3 +116,7 @@ Added Flux architecture.
 ### v1.1.0 - Release
 
 Fixed listener's issue on memory using componentWillUpdate.
+
+### v2.0.0 - Release
+
+Refactored to ES6 and applied redesign.
