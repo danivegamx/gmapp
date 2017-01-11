@@ -21657,6 +21657,7 @@
 		}, {
 			key: 'searchForAddress',
 			value: function searchForAddress(address) {
+				//debugger
 				_AppActions2.default.searchAddress(address);
 			}
 		}, {
@@ -24915,21 +24916,21 @@
 	var LocationList = function (_React$Component) {
 		_inherits(LocationList, _React$Component);
 	
-		function LocationList() {
+		function LocationList(props) {
 			_classCallCheck(this, LocationList);
 	
-			return _possibleConstructorReturn(this, (LocationList.__proto__ || Object.getPrototypeOf(LocationList)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (LocationList.__proto__ || Object.getPrototypeOf(LocationList)).call(this, props));
+			//this.
 		}
+		/*
+	 *	TODO React-required;
+	 *	Method to render the component.
+	 *	@return jsxViewController
+	 */
+	
 	
 		_createClass(LocationList, [{
 			key: 'render',
-	
-	
-			/*
-	  *	TODO React-required;
-	  *	Method to render the component.
-	  *	@return jsxViewController
-	  */
 			value: function render() {
 				var self = this;
 				var index = 0;
@@ -24994,20 +24995,23 @@
 	var LocationItem = function (_React$Component) {
 		_inherits(LocationItem, _React$Component);
 	
-		function LocationItem() {
+		function LocationItem(props) {
 			_classCallCheck(this, LocationItem);
 	
-			return _possibleConstructorReturn(this, (LocationItem.__proto__ || Object.getPrototypeOf(LocationItem)).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, (LocationItem.__proto__ || Object.getPrototypeOf(LocationItem)).call(this, props));
+	
+			_this.handleClick = _this.handleClick.bind(_this);
+			return _this;
 		}
+		/*
+	 *	Method to handle the address on the properties from the app.
+	 */
+	
 	
 		_createClass(LocationItem, [{
 			key: 'handleClick',
-	
-	
-			/*
-	  *	Method to handle the address on the properties from the app.
-	  */
 			value: function handleClick() {
+				//debugger
 				this.props.onClick(this.props.address);
 			}
 	
@@ -25025,7 +25029,6 @@
 				if (this.props.active) {
 					cn += " active-location";
 				}
-	
 				return _react2.default.createElement(
 					'a',
 					{ className: cn, onClick: this.handleClick },
@@ -40001,7 +40004,12 @@
 						_react2.default.createElement(
 							"strong",
 							null,
-							"@danivegamx 2017"
+							"@danivegamx ",
+							_react2.default.createElement(
+								"span",
+								null,
+								"2017"
+							)
 						)
 					)
 				);
@@ -42058,11 +42066,12 @@
 	  },
 	  // Emit Change event
 	  emitChange: function() {
-	    //debugger
+	    debugger
 	    this.emit('change');
 	  },
 	  // Add change listener
 	  addChangeListener: function(callback) {
+	    debugger
 	    this.on('change', callback);
 	  },
 	

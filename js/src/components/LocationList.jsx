@@ -3,6 +3,10 @@ import LocationItem from './LocationItem.jsx';
 
 export default class LocationList extends React.Component {
 
+	constructor(props) {
+		super(props);
+		//this.
+	}
 	/*
 	*	TODO React-required;
 	*	Method to render the component.

@@ -34,11 +34,12 @@ var MapStore = _.extend({}, EventEmitter.prototype, {
   },
   // Emit Change event
   emitChange: function() {
-    //debugger
+    debugger
     this.emit('change');
   },
   // Add change listener
   addChangeListener: function(callback) {
+    debugger
     this.on('change', callback);
   },
 

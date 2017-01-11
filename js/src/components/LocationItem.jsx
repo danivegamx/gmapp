@@ -3,10 +3,15 @@ import moment from 'moment';
 
 export default class LocationItem extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
 	/*
 	*	Method to handle the address on the properties from the app.
 	*/
 	handleClick() {
+		//debugger
 		this.props.onClick(this.props.address);
 	}
 
@@ -21,7 +26,6 @@ export default class LocationItem extends React.Component {
 		if(this.props.active) {
 			cn += " active-location"
 		}
-
 		return (
 			<a className={cn} onClick={this.handleClick}>
 				{this.props.address}

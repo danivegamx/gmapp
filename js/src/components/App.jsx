@@ -93,6 +93,7 @@ export default class App extends React.Component {
 	*	@param address
 	*/
 	searchForAddress(address) {
+		//debugger
 		AppActions.searchAddress(address);
 	}
 
